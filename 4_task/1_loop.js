@@ -10,7 +10,7 @@ for (let i = 1; i < 100; i++) {
 
 // 2. Make a program that prints all positive numbers that are smaller than 100 and even, in this order: 2 98 4 96 6 94 …
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 100; i++) {
   if (i % 2 == 0) {
     console.log(i);
     console.log(100 - i);
@@ -56,6 +56,14 @@ do {
 console.log(total / count);
 
 // 6. Make a program that asks 25 numbers form the user. In the end program prints out average of the numbers.
+
+let i = 0;
+let total = 0;
+while (i < 5) {
+  total += Number(prompt("Give a number", "Give a number"));
+  i++;
+}
+console.log("The average of the numbers were " + total / i);
 
 // 7. Make a program that ask first one number from the user. After that the program asks: ”Do you want to continue giving numbers?(y/n)”. If user answers y, the program continues to ask another number. If user answers n, program ends. In the end program prints out average of the numbers.
 

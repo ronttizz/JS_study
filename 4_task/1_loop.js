@@ -67,19 +67,56 @@ console.log("The average of the numbers were " + total / i);
 
 // 7. Make a program that ask first one number from the user. After that the program asks: ”Do you want to continue giving numbers?(y/n)”. If user answers y, the program continues to ask another number. If user answers n, program ends. In the end program prints out average of the numbers.
 
-let total = Number(prompt("Give a number"));
+let total = 0;
 let count = 0;
 let answer = "";
-do {
+while (answer !== "n") {
   total += Number(prompt("Give a number"));
   count++;
-} while (
-  (answer = prompt("Do you want to continue giving numbers?") === "n" || "N")
-);
+  answer = prompt(
+    "Do you want to continue giving number?",
+    "(y/n)".toLowerCase()
+  );
+}
 console.log("The average of the numbers were: " + total / count);
 
 // 8. Make a program that asks first how many numbers user wants to give to the program. After that program asks those numbers. In the end program prints out the smallest number that user gave.
 
+let howManyNumbers = Number(prompt("How many numbers do you want to give?"));
+let smallest, number;
+for (let i = 0; i < howManyNumbers; i++) {
+  number = Number(prompt("Give a number"));
+  if (number < smallest) {
+    smallest = number;
+  } else if (i === 0) {
+    smallest = number;
+  } else {
+  }
+}
+console.log(`Smallest number were ${smallest}`);
+
 // 9. Make a program that asks ten numbers and in the end prints out two biggest numbers.
+
+let biggest, secondBiggest, number;
+for (let i = 0; i < 10; i++) {
+  number = Number(prompt("Give a number"));
+  if (typeof biggest === "undefined") {
+    biggest = number;
+  } else if (typeof secondBiggest === "undefined") {
+    if (number > biggest) {
+      secondBiggest = biggest;
+      biggest = number;
+    } else {
+      secondBiggest = number;
+    }
+  } else if (number > biggest) {
+    secondBiggest = biggest;
+    biggest = number;
+  } else if (number > secondBiggest) {
+    secondBiggest = number;
+  }
+}
+console.log(`Biggest number were ${biggest}`);
+console.log(`Second biggest number were ${secondBiggest}`);
 
 // 10. Make a program that asks ten numbers. Program calculates and prints out sum and average, also prints out the smallest and biggest number.

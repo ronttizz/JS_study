@@ -120,3 +120,28 @@ console.log(`Biggest number were ${biggest}`);
 console.log(`Second biggest number were ${secondBiggest}`);
 
 // 10. Make a program that asks ten numbers. Program calculates and prints out sum and average, also prints out the smallest and biggest number.
+
+let biggest, smallest, number;
+let sum = 0;
+for (let i = 0; i < 10; i++) {
+  number = Number(prompt("Give a number"));
+  sum += 10;
+  if (typeof biggest === "undefined") {
+    biggest = number;
+  } else if (typeof smallest === "undefined") {
+    if (number > biggest) {
+      smallest = biggest;
+      biggest = number;
+    } else {
+      smallest = number;
+    }
+  } else if (number > biggest) {
+    biggest = number;
+  } else if (number < smallest) {
+    smallest = number;
+  }
+}
+console.log(`Sum of the given numbers were ${sum}`);
+console.log("Average of the given numbers were " + sum / 10);
+console.log(`Smallest given number were ${smallest}`);
+console.log(`Biggest given number were ${biggest}`);

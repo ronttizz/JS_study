@@ -19,12 +19,9 @@
         <div class="attributes">
           <h1>Background Generator</h1>
           <p class="intro">
-            Use the color pickers to make a gradient color backsground. You can
-            take the CSS code and use in your own CSS file. With the CSS you
-            might want to use
-            <strong
-              >background-repeat: no-repeat; and min-height: 100vh;
-            </strong>
+            Use the color pickers to make a gradient color backsground. You can take the
+            CSS code and use in your own CSS file. With the CSS you might want to use
+            <strong>background-repeat: no-repeat; and min-height: 100vh; </strong>
             to cover the full page and be adaptive to window size.
           </p>
           <form>
@@ -32,28 +29,68 @@
             <input type="color" name="color1" value="#ff0000" class="color1" />
             <input type="color" name="color2" value="#000000" class="color2" />
             <h3>Direction</h3>
+            <!-- 
+
+                This part was version 1.0
+
             <label for="bottom">To bottom</label>
-            <input
-              type="radio"
-              value="to bottom"
-              name="direction"
-              id="bottom"
-              checked
-            />
+            <input type="radio" value="to bottom" name="directionButton" id="bottom" checked />
             <label for="top">To top</label>
-            <input type="radio" value="to top" name="direction" id="top" />
+            <input type="radio" value="to top" name="directionButton" id="top" />
             <label for="right">To right</label>
-            <input type="radio" value="to right" name="direction" id="right" />
+            <input type="radio" value="to right" name="directionButton" id="right" />
             <label for="left">To left</label>
-            <input type="radio" value="to left" name="direction" id="left" />
-          </form>
+            <input type="radio" value="to left" name="directionButton" id="left" /> 
+        
+            -->
+            <table>
+                <tr>
+                    <td>
+                        <!-- TOPLEFT -->
+                        <input type="radio" id="TOPLEFT" class="directionButton" name="directionButton" value="to left top"></input>
+                    </td>
+                    <td>
+                        <!-- TOP -->
+                        <input type="radio" id="TOP" class="directionButton" name="directionButton" value="to top"></input>
+                    </td>
+                    <td>
+                        <!-- TOPRIGHT -->
+                        <input type="radio" id="TOPRIGHT" class="directionButton" name="directionButton" value="to right top"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- LEFT -->
+                        <input type="radio" id="left" class="directionButton" name="directionButton" value="to left"></input>
+                    </td>
+                    <td><!-- empty --></td>
+                    <td>
+                        <!-- RIGHT -->
+                        <input type="radio" id="right" class="directionButton" name="directionButton" value="to right"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- BOTTOMLEFT -->
+                        <input type="radio" id="BOTTOMLEFT" class="directionButton" name="directionButton" value="to left bottom"></input>
+                    </td>
+                    <td>
+                        <!-- BOTTOM -->
+                        <input type="radio" id="bottom" class="directionButton" name="directionButton" value="to bottom" checked></input>
+                    </td>
+                    <td>
+                        <!-- BOTTOMRIGHT -->
+                        <input type="radio" id="BOTTOMRIGHT" class="directionButton" name="directionButton" value="to right bottom"></input>
+                    </td>
+                </tr>
+            </table>
+        </form>
         </div>
         <div class="result">
-          <button type="submit">Generate</button>
-          <h3>CSS Code:</h3>
-          <p class="code">
-            background-image: linear-gradient(to bottom, #ff0000, #000000);
-          </p>
+            <h3>CSS Code:</h3>
+            <p class="code">
+                background-image: linear-gradient(to bottom, #ff0000, #000000);
+            </p>
         </div>
       </div>
     </main>

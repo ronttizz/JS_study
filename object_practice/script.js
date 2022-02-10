@@ -3,10 +3,10 @@ const car = {
   year: "2020",
   owner: "Toni Nissinen",
   city: "Espoo",
-  about() {
+  about: function () {
     return `${this.mark} is owned by ${this.owner}`;
   },
-  howOld() {
+  calcAge: function () {
     return 2022 - this.year;
   },
 };
@@ -21,4 +21,4 @@ console.log(car);
 
 console.log(car.about());
 
-console.log(car.howOld);
+console.log(car.calcAge());

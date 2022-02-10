@@ -1,4 +1,5 @@
-const form = document.querySelector("#car");
+const form = document.querySelector("#carDetails");
+const search = document.querySelector("#search");
 let resultTable = document.querySelector(".result");
 
 const button = document.querySelector("#submit");
@@ -28,10 +29,15 @@ const addCar = (event) => {
   let newCar = new Car(plate, maker, model, owner, price, color);
 
   carArray.push(newCar);
-  console.table(carArray);
+  //   console.table(carArray);
 
-  console.log("form was clicked.", plate, maker, model, owner, +price, color);
+  //   console.log("form was clicked.", plate, maker, model, owner, +price, color);
   makeTable();
+};
+
+const searchData = (event) => {
+  event.preventDefault();
+  console.log("SEARCH CLICKED");
 };
 
 const makeTable = () => {
@@ -50,12 +56,13 @@ const makeTable = () => {
   }
   result += "</table>";
   resultTable.innerHTML = result;
-  console.table(result);
+  //   console.table(result);
 };
 
 makeTable();
 
 form.addEventListener("submit", addCar);
+search.addEventListener("submit", searchData);
 
 // form.addEventListener("submit", (e) => {
 //   e.preventDefault();

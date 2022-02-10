@@ -12,15 +12,18 @@
       <form id="search">
         <div class="search-group">
           <h2>Search:</h2>
-          <label for="search">Search for license plate</label>
-          <input type="text" id="search" />
+          <form id="search">
+            <label for="search">Search for license plate</label>
+            <input type="text" id="search-param" />
+            <input type="submit" value="Search" />
+          </form>
         </div>
       </form>
     </header>
     <main>
-      <div id="details">
+      <div id="car-details">
         <h2>Car Details</h2>
-        <form id="car">
+        <form id="carDetails">
           <div>
             <label for="plate">License Plate:</label>
             <input type="text" name="details" id="plate" value="123" />

@@ -1,0 +1,14 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+}
+
+input {
+  padding: 0.3rem;
+  margin: 0.1rem;
+}

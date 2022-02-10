@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(to bottom, #ff0000, #000000);
+  background-image: linear-gradient(#ff0000, #000000);
   background-repeat: no-repeat;
   min-height: 100vh;
   font-family: "Nunito", sans-serif;
@@ -7,22 +7,9 @@ body {
   padding: 25px;
 }
 
-.directionButton {
-  width: 40px;
-  height: 40px;
-}
-
-table {
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px;
-  /* border: solid green; */
-}
-td {
-  padding: 1px;
-  margin: 1px;
-  /* border: dotted purple; */
+button {
+  padding: 15px;
+  margin: 15px;
 }
 
 .generator {

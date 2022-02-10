@@ -6,6 +6,9 @@ const car = {
   about() {
     return `${this.mark} is owned by ${this.owner}`;
   },
+  howOld() {
+    return 2022 - this.year;
+  },
 };
 
 console.log(car);
@@ -18,15 +21,4 @@ console.log(car);
 
 console.log(car.about());
 
-const car2 = new Object();
-
-car2.mark = "Dodge RAM";
-car2.year = "2020";
-car2.owner = "Toni Nissinen";
-car2.city = "Espoo";
-
-console.log(car2);
-
-delete car2.city;
-
-console.log(car2);
+console.log(car.howOld);

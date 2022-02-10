@@ -12,3 +12,18 @@ input {
   padding: 0.3rem;
   margin: 0.1rem;
 }
+
+th {
+  text-transform: uppercase;
+  background-color: lightblue;
+  padding: 1rem;
+}
+
+tr {
+  background-color: lightgreen;
+  font-weight: bolder;
+}
+
+tr:nth-child(2n) {
+  background-color: rgb(108, 180, 108);
+}

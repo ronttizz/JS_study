@@ -1,5 +1,5 @@
 const form = document.querySelector("#car");
-const details = document.querySelectorAll('input[name="details"]');
+let resultTable = document.querySelector(".result");
 
 const button = document.querySelector("#submit");
 
@@ -14,7 +14,7 @@ class Car {
   }
 }
 
-const carArray = [];
+const carArray = [{ licence: "", maker: "", model: "", owner: "", price: "", color: "" }];
 
 const addCar = (event) => {
   event.preventDefault(); // REALLY IMPORTANT WHEN USING SUBMIT
@@ -31,7 +31,29 @@ const addCar = (event) => {
   console.table(carArray);
 
   console.log("form was clicked.", plate, maker, model, owner, +price, color);
+  makeTable();
 };
+
+const makeTable = () => {
+  let result = "<table>";
+  result += "<tr>";
+  for (const key in carArray[0]) {
+    result += "<th>" + key + "</th>";
+  }
+  result += "</tr>";
+  for (let i = 1; i < carArray.length; i++) {
+    result += "<tr>";
+    for (const key in carArray[i]) {
+      result += "<td>" + carArray[i][key] + "</td>";
+    }
+    result += "</tr>";
+  }
+  result += "</table>";
+  resultTable.innerHTML = result;
+  console.table(result);
+};
+
+makeTable();
 
 form.addEventListener("submit", addCar);
 

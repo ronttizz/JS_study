@@ -15,10 +15,12 @@ class Car {
   }
 }
 
+//
 const carArray = [{ licence: "", maker: "", model: "", owner: "", price: "", color: "" }];
 
+// funtion to add a car to table and present the table in html
 const addCar = (event) => {
-  event.preventDefault(); // REALLY IMPORTANT WHEN USING SUBMIT
+  event.preventDefault();
   const plate = document.querySelector("#plate").value;
   const maker = document.querySelector("#maker").value;
   const model = document.querySelector("#model").value;
@@ -29,15 +31,21 @@ const addCar = (event) => {
   let newCar = new Car(plate, maker, model, owner, price, color);
 
   carArray.push(newCar);
-  //   console.table(carArray);
 
-  //   console.log("form was clicked.", plate, maker, model, owner, +price, color);
   makeTable();
 };
 
 const searchData = (event) => {
   event.preventDefault();
-  console.log("SEARCH CLICKED");
+  carArray.forEach((car) => {
+    const filter = document.querySelector("#search-param").value;
+    const answer = document.querySelector("#search-result");
+    if (car.plate === filter) {
+      answer.textContent = `Car with license plate #${car.plate} is owned by ${car.owner}`;
+    } else {
+      answer.textContent = "No Luck today";
+    }
+  });
 };
 
 const makeTable = () => {
@@ -56,15 +64,9 @@ const makeTable = () => {
   }
   result += "</table>";
   resultTable.innerHTML = result;
-  //   console.table(result);
 };
 
 makeTable();
 
 form.addEventListener("submit", addCar);
 search.addEventListener("submit", searchData);
-
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   console.log();
-// });

@@ -37,15 +37,21 @@ const addCar = (event) => {
 
 const searchData = (event) => {
   event.preventDefault();
+  let searchResult;
+  const filter = document.querySelector("#search-param").value;
+  const answer = document.querySelector("#search-result");
   carArray.forEach((car) => {
-    const filter = document.querySelector("#search-param").value;
-    const answer = document.querySelector("#search-result");
-    if (car.plate === filter) {
-      answer.textContent = `Car with license plate #${car.plate} is owned by ${car.owner}`;
-    } else {
-      answer.textContent = "No Luck today";
+    if (car.plate == filter) {
+      searchResult = car;
     }
   });
+  if (searchResult !== undefined) {
+    answer.textContent = `Car license ${searchResult.plate} is owned by ${searchResult.owner}`;
+  } else if (filter === "") {
+    answer.textContent = "Please enter license number";
+  } else {
+    answer.textContent = "No car was found";
+  }
 };
 
 const makeTable = () => {

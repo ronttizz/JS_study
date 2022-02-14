@@ -13,6 +13,10 @@ input {
   margin: 0.1rem;
 }
 
+div {
+  margin: 0.75rem;
+}
+
 th {
   text-transform: uppercase;
   background-color: lightblue;
